@@ -1,21 +1,55 @@
-import data from '../data';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const Detail = (props) => {
-  const [items] = useState(data);
+  const [count, setCount] = useState(0);
+  const [discount, setDiscount] = useState(true);
+
+  // useEffect
+  useEffect(() => {
+    let a = setTimeout(() => {
+      setDiscount(false);
+    }, 2000);
+    return () => {
+      clearTimeout(a);
+    };
+  }, []);
+
+  const [message, setMessage] = useState('');
+  useEffect(() => {
+    if (isNaN(message) == true) {
+      alert('숫자만 입력가능합니다');
+    }
+  }, [message]);
+
+  const { id } = useParams();
+  let selectedItem = props.items.find(function (item) {
+    return item.id == id;
+  });
+
   return (
     <>
       <div className='container'>
+        {discount ? <div className='alert alert-warning'>2초이내 구매시 할인</div> : <></>}
+        {count}
+        <button
+          onClick={() => {
+            setCount(count + 1);
+          }}
+        >
+          plus
+        </button>
         <div className='row'>
           <div className='col-md-6'>
-            <img src='https://codingapple1.github.io/shop/shoes1.jpg' width='100%' />
+            <img src={selectedItem.imgUrl} width='100%' />
           </div>
           <div className='col-md-6'>
-            <h4 className='pt-5'>아아아</h4>
-            <p>상품설명</p>
-            <p>120000원</p>
+            <h4 className='pt-5'>{selectedItem.title}</h4>
+            <p>{selectedItem.content}</p>
+            <p>{selectedItem.price} kr</p>
             <button className='btn btn-danger'>주문하기</button>
           </div>
+          <input onChange={(e) => setMessage(e.target.value)}></input>
         </div>
       </div>
     </>
