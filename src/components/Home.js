@@ -5,7 +5,7 @@ import data from '../data';
 import axios from 'axios';
 
 const Home = (props, i) => {
-  const [moreBtn, setMoreBtn] = useState(true);
+  const [count, setCount] = useState(1);
   return (
     <>
       <div className='main-bg'></div>
@@ -43,16 +43,17 @@ const Home = (props, i) => {
             return <Item items={props.items[i]} i={i + 1} key={i} />;
           })}
         </Row>
-        {moreBtn ? (
+
+        {count < 3 ? (
           <button
             onClick={() => {
               axios
-                .get('https://raw.githubusercontent.com/dyoungky/shopping/master/data2.json?token=GHSAT0AAAAAAB7PHXC27X4FLSABYI23ZG5MZAPJFLQ')
+                .get('https://codingapple1.github.io/shop/data' + (count + 1) + '.json')
                 .then((data) => {
-                  setMoreBtn(false);
                   let copy = [...props.items, ...data.data];
-
                   props.setItems(copy);
+
+                  setCount(count + 1);
                 })
                 .catch(() => {
                   console.log('실패할경우');
@@ -61,9 +62,7 @@ const Home = (props, i) => {
           >
             Show more
           </button>
-        ) : (
-          <></>
-        )}
+        ) : null}
       </Container>
     </>
   );
