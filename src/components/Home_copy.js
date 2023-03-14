@@ -1,9 +1,8 @@
 import { Routes, Route, Link, useNavigate, Outlet, useParams, NavLink } from 'react-router-dom';
 import { Container, Nav, Navbar, Row, Col } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import data from '../data';
 import axios from 'axios';
-import { useEffect } from 'react';
 
 const Home = (props, i) => {
   const [count, setCount] = useState(1);
@@ -24,7 +23,7 @@ const Home = (props, i) => {
           props.setItems(copy);
         }}
       >
-        A to Z
+        Ascending order
       </button>
       <button
         className='button'
@@ -37,7 +36,7 @@ const Home = (props, i) => {
           props.setItems(copy);
         }}
       >
-        Z to A
+        Descending order
       </button>
 
       <Container>
@@ -46,7 +45,7 @@ const Home = (props, i) => {
             return <Item items={props.items[i]} i={i + 1} key={i} />;
           })}
         </Row>
-        {loading == true ? <div style={{ margin: '30px 0' }}>Loading...</div> : null}
+
         {count < 3 ? (
           <button
             className='more'
@@ -54,43 +53,33 @@ const Home = (props, i) => {
               setLoading(true);
               setTimeout(() => {
                 axios
-                  .get('./data' + (count + 1) + '.json')
-                  .then((result) => {
-                    let copy = [...props.items, ...result.data];
+                  .get('/data' + (count + 1) + '.json')
+                  .then((data) => {
+                    let copy = [...props.items, ...data.data];
                     props.setItems(copy);
                     setCount(count + 1);
                     setLoading(false);
                   })
                   .catch(() => {
-                    console.log('error');
+                    setLoading(false);
+                    alert('Error');
                   });
               }, 2000);
             }}
           >
-            Show more
+            See more
           </button>
         ) : null}
+        {loading === true ? <div>Loading...</div> : null}
       </Container>
     </>
   );
 };
 
 const Item = (props) => {
-  let [fade, setFade] = useState('');
-
-  useEffect(() => {
-    setTimeout(() => {
-      setFade('end');
-    }, 100);
-
-    return () => {
-      setFade('');
-    };
-  }, [props.tabs]);
-
   return (
     <Col sm className='products'>
-      <NavLink to={'/detail/' + props.items.id} className={'start ' + fade}>
+      <NavLink to={'/detail/' + props.items.id}>
         <img width='100%' src={props.items.imgUrl} />
         <h4>{props.items.title}</h4>
         <p>{props.items.price} DKK</p>

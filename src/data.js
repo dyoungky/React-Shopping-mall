@@ -10,7 +10,7 @@ let data = [
 
   {
     id: 1,
-    title: 'Plant Box',
+    title: 'PLANT BOX',
     imgUrl: 'https://designme.dk/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/f/e/ferm-living-plant-box-bright-blue-1104265287-2/fermlivingplantboxbrightblue-32.jpg',
     price: 1699,
     content:
