@@ -8,10 +8,7 @@ let stock = createSlice({
 
 let cart = createSlice({
   name: 'cart',
-  initialState: [
-    { id: 1, title: 'PLANT BOX', count: 1, price: 1699 },
-    { id: 4, title: 'DAY CLOTHS | SÆT AF 7', count: 1, price: 399 },
-  ],
+  initialState: [],
 
   reducers: {
     addCount(state, action) {

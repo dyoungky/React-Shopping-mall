@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
-import { addItem } from '../store';
+import { addItem, addCount } from '../store';
 import { useSelector, useDispatch } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -74,8 +74,13 @@ const Detail = (props) => {
             <button
               className='btn btn-danger'
               onClick={() => {
-                let checkedItem = state.cart;
-                console.log(checkedItem);
+                const cartItem = state.cart;
+                let a = cartItem.findIndex(checkAge);
+                function checkAge(price) {
+                  return price > 18;
+                }
+                console.log(a);
+
                 dispatch(addItem({ id: selectedItem.id, title: selectedItem.title, price: selectedItem.price, count: 1 }));
                 if (window.confirm('Do you want to see your cart?')) {
                   return navigate('/Cart');
