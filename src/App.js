@@ -1,15 +1,18 @@
 import './App.css';
 import { Container, Nav, Navbar, Row, Col } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, createContext } from 'react';
 import data from './data';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 import Detail from './components/Detail';
 import About from './components/About';
 import Home from './components/Home';
+import Cart from './components/Cart';
 
 function App() {
   const [items, setItems] = useState(data);
   const navigate = useNavigate();
+
+  // Cart
 
   return (
     <div className='App'>
@@ -26,13 +29,7 @@ function App() {
             >
               Home
             </Nav.Link>
-            <Nav.Link
-              onClick={() => {
-                navigate('/detail');
-              }}
-            >
-              Detail
-            </Nav.Link>
+
             <Nav.Link
               onClick={() => {
                 navigate('/about');
@@ -49,6 +46,13 @@ function App() {
               {' '}
               Event{' '}
             </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate('/cart');
+              }}
+            >
+              Cart
+            </Nav.Link>
 
             {/* <Link to='/' className='menu'> Home </Link>
             <Link to='/detail' className='menu'> Detail </Link>
@@ -60,6 +64,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home items={items} setItems={setItems} />} />
         <Route path='/detail/:id' element={<Detail items={items} />} />
+        <Route path='/cart' element={<Cart items={items} setItems={setItems}></Cart>} />
         {/* <Route path='/about' element={<About />} /> */}
         {/* <Route path='/about/member' element={<About/>} />
         <Route path='/about/location' element={<About/>} /> */}

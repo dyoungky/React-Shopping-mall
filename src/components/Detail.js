@@ -1,12 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
+import { addItem } from '../store';
+import { useSelector, useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Detail = (props) => {
+  const navigate = useNavigate();
+  let state = useSelector((state) => {
+    return state;
+  });
+  let dispatch = useDispatch();
+
   // const [count, setCount] = useState(0);
   const [discount, setDiscount] = useState(true);
   const [tabs, setTabs] = useState(0);
   let [fade2, setFade2] = useState('');
+
   useEffect(() => {
     setTimeout(() => {
       setFade2('end');
@@ -59,11 +70,26 @@ const Detail = (props) => {
             <h4 className='pt-5'>{selectedItem.title}</h4>
             <p>{selectedItem.content}</p>
             <p>{selectedItem.price} kr</p>
-            <button className='btn btn-danger'>주문하기</button>
+            {/* ///.order button */}
+            <button
+              className='btn btn-danger'
+              onClick={() => {
+                let checkedItem = state.cart;
+                console.log(checkedItem);
+                dispatch(addItem({ id: selectedItem.id, title: selectedItem.title, price: selectedItem.price, count: 1 }));
+                if (window.confirm('Do you want to see your cart?')) {
+                  return navigate('/Cart');
+                } else {
+                  return null;
+                }
+              }}
+            >
+              Order
+            </button>
           </div>
           {/* <input onChange={(e) => setMessage(e.target.value)}></input> */}
         </div>
-
+        {/* ///.product information tab */}
         <Nav variant='tabs' defaultActiveKey='link-0'>
           <Nav.Item>
             <Nav.Link
@@ -96,7 +122,7 @@ const Detail = (props) => {
             </Nav.Link>
           </Nav.Item>
         </Nav>
-        <TabContent tabs={tabs} />
+        <TabContent tabs={tabs} selectedItem={selectedItem} />
       </div>
     </>
   );
@@ -124,6 +150,6 @@ const TabContent = (props) => {
   // }
 
   // method2
-  return <div className={'start ' + fade}> {[<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][props.tabs]}</div>;
+  return <div className={'start ' + fade}> {[<div>{props.selectedItem.content}</div>, <div>내용1</div>, <div>내용2</div>][props.tabs]}</div>;
 };
 export default Detail;
