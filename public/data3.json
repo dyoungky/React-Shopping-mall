@@ -1,23 +1,31 @@
 [
   {
-    "id": "6",
-    "title": "ERA CHANDELIER",
-    "imgUrl": "https://sw28470.sfstatic.io/upload_dir/shop/_0004_fermLIVING-SS22-EraChandelier-1104265567-pack-2.jpg",
+    "id": 6,
+    "title": "Era Chandelier",
+    "subTitle": "Black",
+    "imgUrl": "https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104266571_1_1678302326_1800x.png?v=1678302344",
+    "imgUrl1": "https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104266571_2_1678302326_1800x.jpg?v=1678302344",
+    "imgUrl2": "https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104266571_3_1678302326_1800x.png?v=1678302344",
     "content": "Era Chandelier er en elegant og udtryksfuld lampe inspireret af de klare linjer og geometriske former fra 20'ernes art deco-bevægelse. Med tre kugler i opalglas, der hviler ubesværet på en let, pulverlakeret jernstruktur, har lysekronen et feminint og sart udtryk, der knytter sig til den karakteristiske æra og repræsenterer alt det, vi elsker ved tidløst design og enkelhed i konstruktionen. Lad Era Chandelier pynte i din entré eller på dine trapper eller oplyse samtalen ved middagsbordet.",
-    "price": "4499"
+    "price": 4499
   },
   {
-    "id": "7",
-    "title": "ALPHABET FABRIC POSTER",
-    "imgUrl": "https://sw28470.sfstatic.io/upload_dir/shop/_0015_fermLIVING_AW22_AlphabetFabricPoster_1104266382_pack_1.jpg",
-    "content": "Pynt dit lille barns væg med den karakterfulde Alphabet Fabric Poster. Fremstillet af GOTS-certificeret stof og hvert bogstav i alfabetetet er blevet broderet på plakaten i et charmerende design, hvilket resulterer i en taktil og varm vægdekoration, der helt sikkert vil give dit børneværelse et sjovt og farverigt udtryk. Med et metaløje i hvert øverste hjørne er plakaten nem at hænge på den ønskede væg.",
-    "price": "299"
+    "id": 7,
+    "title": "Alphabet Fabric Poster",
+    "subTitle": "Off-white",
+    "imgUrl": "https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104266382_1_1661757347_1800x.png?v=1661757364",
+    "imgUrl1": "https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104266382_2_1661757347_1800x.jpg?v=1661757364",
+    "imgUrl2": "https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104266382_3_1661757347_1800x.jpg?v=1661757364",
+    "content": "Pynt dit barns væg med den indtagende Alphabet Fabric Poster. Hvert bogstav i alfabetet er fremstillet af GOTS-certificeret stof og er blevet omhyggeligt broderet på plakaten i et charmerende design, der resulterer i en taktil og varm vægdekoration, som uden tvivl vil give dit børneværelse et sjovt og farverigt udtryk. Plakaten har et metaløje øverst i hvert hjørne og er nem at hænge op på den ønskede væg.",
+    "price": 299
   },
   {
-    "id": "8",
-    "title": "FILO TABLE LAMP",
-    "imgUrl": "https://sw28470.sfstatic.io/upload_dir/shop/_0008_fermLIVING-SS22-FiloTableLamp-Black-Cashmere-1104265362-pack-1.jpg",
-    "content": "Filo Table Lamp er kendetegnet ved sine karakteristiske grafiske linjer og sin klassiske silhuet og er et tidløst designstykke. Skærmens arkitektoniske form kombineret med den hvide satinfinish på indersiden reflekterer smukt lyset på bordet, hvilket gør den ideel, når der skal arbejdes ved skrivebordet. Filo Table Lamp fås i forskellige farver, så der er plads til personlighed.",
-    "price": "1999"
+    "id": 8,
+    "title": "Frame Art Blocks",
+    "imgUrl": "https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104266392_1_1661757422_1800x.png?v=1661757447",
+    "imgUrl1": "https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104266392_2_1661757422_1800x.jpg?v=1661757447",
+    "imgUrl2": "https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104266392_3_1661757422_1800x.png?v=1661757447",
+    "content": "Sæt gang i dit barns kreativitet med de indtagende Frame Art Blocks, der er lavet af FSC®-certificeret træ. Klodserne har et finurligt udtryk og ligger i en træramme. Der er ikke noget forudbestemt mønster, og klodserne kan kombineres på en uendelig række forskellige måder, så dit barn kan bruge sin fantasi til at skabe charmerende kunstværker. Hvis du gerne vil forevige et bestemt værk, foreslår vi, at du limer klodserne på rammen og hænger den på væggen som et dejligt minde.",
+    "price": 299
   }
 ]

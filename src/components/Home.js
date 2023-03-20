@@ -1,101 +1,134 @@
-import { Routes, Route, Link, useNavigate, Outlet, useParams, NavLink } from 'react-router-dom';
-import { Container, Nav, Navbar, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import Carousel from 'react-bootstrap/Carousel';
 import { useState } from 'react';
-import data from '../data';
 import axios from 'axios';
-import { useEffect } from 'react';
+import Item from './Item';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown, faArrowUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import DarkVariantExample from './DarkVariantExample';
 
-const Home = (props, i) => {
+const Home = (props) => {
   const [count, setCount] = useState(1);
   const [loading, setLoading] = useState(false);
 
   return (
     <>
       <div className='main-bg'></div>
-
-      <button
-        className='button'
-        type='button'
-        onClick={() => {
-          let copy = [...props.items];
-          copy.sort((a, b) => {
-            return a.title > b.title ? 1 : -1;
-          });
-          props.setItems(copy);
-        }}
-      >
-        A to Z
-      </button>
-      <button
-        className='button'
-        type='button'
-        onClick={() => {
-          let copy = [...props.items];
-          copy.sort((a, b) => {
-            return b.title > a.title ? 1 : -1;
-          });
-          props.setItems(copy);
-        }}
-      >
-        Z to A
-      </button>
-
       <Container>
-        <Row>
-          {props.items.map((item, i) => {
-            return <Item items={props.items[i]} i={i + 1} key={i} />;
-          })}
-        </Row>
-        {loading == true ? <div style={{ margin: '30px 0' }}>Loading...</div> : null}
-        {count < 3 ? (
+        {/* Order button */}
+        <div className='orderBtn'>
           <button
-            className='more'
+            className='button'
+            type='button'
             onClick={() => {
-              setLoading(true);
-              setTimeout(() => {
-                axios
-                  .get('./data' + (count + 1) + '.json')
-                  .then((result) => {
-                    let copy = [...props.items, ...result.data];
-                    props.setItems(copy);
-                    setCount(count + 1);
-                    setLoading(false);
-                  })
-                  .catch(() => {
-                    console.log('error');
-                  });
-              }, 2000);
+              let copy = [...props.items];
+              copy.sort((a, b) => {
+                return a.title > b.title ? 1 : -1;
+              });
+              props.setItems(copy);
             }}
           >
-            Show more
+            A to Z <FontAwesomeIcon icon={faArrowDown} />
           </button>
-        ) : null}
+          <button
+            className='button'
+            type='button'
+            onClick={() => {
+              let copy = [...props.items];
+              copy.sort((a, b) => {
+                return a.title > b.title ? 1 : -1;
+              });
+              props.setItems(copy);
+            }}
+          >
+            Z to A <FontAwesomeIcon icon={faArrowUp} />
+          </button>
+          <button
+            className='button'
+            type='button'
+            onClick={() => {
+              let copy = [...props.items];
+              copy.sort((a, b) => {
+                return b.price > a.price ? 1 : -1;
+              });
+              props.setItems(copy);
+            }}
+          >
+            Highest price <FontAwesomeIcon icon={faArrowDown} />
+          </button>
+          <button
+            className='button'
+            type='button'
+            onClick={() => {
+              let copy = [...props.items];
+              copy.sort((a, b) => {
+                return a.price > b.price ? 1 : -1;
+              });
+              props.setItems(copy);
+            }}
+          >
+            Lowest price <FontAwesomeIcon icon={faArrowUp} />
+          </button>
+        </div>
+
+        {/* Items at Main page */}
+        <div className='items'>
+          {props.items.map((item, i) => {
+            return <Item items={props.items[i]} key={i} />;
+          })}
+        </div>
+
+        <div style={{ textAlign: 'center' }}>
+          {/* Loading */}
+          {loading == true ? (
+            <div style={{ marginBottom: '1px' }}>
+              <div className='lds-ellipsis'>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          ) : null}
+
+          {/* Show more button  */}
+          {count < 3 ? (
+            <button
+              className='more'
+              onClick={() => {
+                setLoading(true);
+                setTimeout(() => {
+                  axios
+                    .get('./data' + (count + 1) + '.json')
+                    .then((result) => {
+                      let copy = [...props.items, ...result.data];
+                      props.setItems(copy);
+                      setCount(count + 1);
+                      setLoading(false);
+                    })
+                    .catch(() => {
+                      console.log('error');
+                    });
+                }, 2000);
+              }}
+            >
+              Show more <FontAwesomeIcon icon={faCaretDown} />
+            </button>
+          ) : null}
+        </div>
       </Container>
+
+      <section className='bottom'>
+        <h5 className='bottom-title'>
+          FERM LIVING using <span>React</span>
+        </h5>
+        <h5 className='bottom-dy'>
+          <a href='https://dyoungky.dk/' target='_blank' rel='noreferrer'>
+            dyoungky.dk
+          </a>
+        </h5>
+      </section>
     </>
-  );
-};
-
-const Item = (props) => {
-  let [fade, setFade] = useState('');
-
-  useEffect(() => {
-    setTimeout(() => {
-      setFade('end');
-    }, 100);
-
-    return () => {
-      setFade('');
-    };
-  }, [props.tabs]);
-
-  return (
-    <Col sm className='products'>
-      <NavLink to={'/detail/' + props.items.id} className={'start ' + fade}>
-        <img width='100%' src={props.items.imgUrl} />
-        <h4>{props.items.title}</h4>
-        <p>{props.items.price} DKK</p>
-      </NavLink>
-    </Col>
   );
 };
 

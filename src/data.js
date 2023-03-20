@@ -1,29 +1,47 @@
 let data = [
   {
     id: 0,
-    title: 'ARUM TABLE LAMP',
-    imgUrl: 'https://sw28470.sfstatic.io/upload_dir/shop/Ferm-living-Arum-table-_0000_Arum_table_lamp.jpg',
-    price: 3149,
+    title: 'Filo Table Lamp',
+    color: 'Black',
+    imgUrl: 'https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104265361_1_1648023773_1800x.png?v=1648023792',
+    imgUrl1: 'https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104265361_5_1648047964_1800x.jpg?v=1648047974',
+    imgUrl2: 'https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104265361_3_1648023773_1800x.png?v=1648023792',
+    price: 1999,
     content:
-      'ferm LIVING’s Arum table lamp combines gentle, organic shapes with the natural beauty of its travertine base. Named after Arum plants, the luminaire features a delicate leaf-like shade that can be adjusted to provide either task or ambient light. Matte off-white on the inside, the shade distributes the light softly and evenly, creating a welcoming atmosphere in the bedroom, living room or office.',
+      'Filo Table Lamp er kendetegnet ved sine karakteristiske grafiske linjer og sin klassiske silhuet og er et tidløst designstykke. Skærmens arkitektoniske form kombineret med den hvide satinfinish på indersiden reflekterer smukt lyset på bordet, hvilket gør den ideel, når der skal arbejdes ved skrivebordet. Vores Filo Table Lamp fås i forskellige farver, så der er plads til personlighed.',
+    detail:
+      'Varenummer: 1104266766 Farve: Mirror Polished Størrelse: B: 30 x H: 43 x D: 30 cm Materiale: Powder coated iron base and mirror polished stainless steel lamp shade. White inside lamp shade. E14 socket. 2.6 metre fabric cord with on/off switch Spænding: 220-240V - 50Hz. Lyskilde: E14 max 12 watt LED. Pære medfølger ikke. Kun godkendt til EU/NO/CH/UK (UK stikversion til UK). Separat version for USA Plejeanvisning: Tørres af med fugtig klud',
+    leaving: 'Alle fragtpriser beregnes ud fra de valgte produkters volumen. De præcise fragtomkostninger for netop dit køb bliver beregnet ved betaling. ',
   },
 
   {
     id: 1,
-    title: 'PLANT BOX',
-    imgUrl: 'https://designme.dk/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/f/e/ferm-living-plant-box-bright-blue-1104265287-2/fermlivingplantboxbrightblue-32.jpg',
+    title: 'Plant Box',
+    color: 'Blue',
+    imgUrl: 'https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104265287_2_1642427080_1800x.png?v=1642427107',
+    imgUrl1: 'https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104265287_3_1642427080_1800x.jpg?v=1642427107',
+    imgUrl2: 'https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104265287_1_1642427080_1800x.png?v=1642427107',
     price: 1699,
     content:
-      'Med dette konsolbord tager det danske firma LIVING den enormt populære plantekasse til et nyt niveau. Konsolbordet har de samme rene og minimalistiske linjer, som vi er vant til at se med den traditionelle plantekasse, men her kommer det i en højere udgave med lav hylde og bakke med kanter i toppen. På den nederste hylde kan du stille et par højere vaser eller andre større dekorationer, mens du på toppen kan placere f.eks. en potte med en plante, et smukt stilleben med nogle bøger samt en fin skål med nøgler eller smykker. Eftersom konsolbordet kan tåle at stå udenfor, passer det også perfekt til altanen.',
+      'Vores Plantekasser kan bruges til dekoration i hele huset, som midlertidig opbevaring i gangen eller som en lille skillevæg til at skabe hyggekroge i større rum. De er velegnede til blomster, planter, bøger, legetøj og magasiner -  eller måske lidt af hvert. Fyld dem med smukke blomster i fine vaser eller grønne planter i grove lerpotter og se, hvordan kontrasten mellem designet og de ting, du tilføjer, skifter.',
+    detail: 'Varenummer: 1104265287 Farve: Blue \n Størrelse: B: 60 x H: 65 x D: 25 cm \n Materiale: Pulverlakeret stål \nRegistreret design \nPlejeanvisning: Tørres af med fugtig klud',
+    leaving:
+      'Alle fragtpriser beregnes ud fra de valgte produkters volumen. De præcise fragtomkostninger for netop dit køb bliver beregnet ved betaling. \n Levering i Danmark \n Estimeret \n leveringstid: 1-2 hverdage* \n  Køb under 650 kr.: Fra 19,00 kr.\n   Køb over 650 kr.: Gratis* \n *Gælder ikke for ordrer med møbler og/eller høj volume.',
   },
 
   {
     id: 2,
-    title: 'MIDI BOWLS | SÆT AF 3',
-    imgUrl: 'https://sw28470.sfstatic.io/upload_dir/shop/_thumbs/_0002_fermLIVING_AW22_MidiBowls_1104266324_pack_1.w610.h610.backdrop.jpg',
-    price: 599,
+    title: 'Day Cloths',
+    subTitle: 'Set of 7',
+    imgUrl: 'https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104265938_1_1661757212_1800x.png?v=1661757242',
+    imgUrl1: 'https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104265938_2_1661757212_1800x.jpg?v=1661757242',
+    imgUrl2: 'https://cdn.shopify.com/s/files/1/0150/3310/6496/products/1104265938_12_1661757212_1800x.png?v=1661757243',
     content:
-      'Midi Bowls er et sæt porcelænsskåle, der har et japansk udtryk på grund af deres forhøjede fod og grovere tekstur og følelse. Midi-skålene skaber en markant kontrast og er glaseret i varme, graduerede, jordiske nuancer, mens foden af ​​hver skål efterlades uglaseret. Som en perfekt trio er Midi Bowls ideelle til servering af snacks, supper eller salater.',
+      'Day Cloths fejrer alle ugens dage og består af et sæt på syv karklude, hvor hver har et vævet mærkat, der angiver ugedagen. De fine ribstrikkede økologiske, GOTS-certificerede bomuldskarklude er et ansvarligt alternativ til traditionelle klude og vil give dit køkken et stilfuldt touch. Day Cloths er en god gaveidé, da de er pakket i en elegant æske.',
+    detail: 'Varenummer: 1104265938 \n Farve: Blue \n Størrelse: B: 26 x H: 26 cm \n Materiale: 100% GOTs certificeret økologisk bomuld \n Comes in a giftbox \n Plejeanvisning: 40°C vask',
+    leaving:
+      'Alle fragtpriser beregnes ud fra de valgte produkters volumen. De præcise fragtomkostninger for netop dit køb bliver beregnet ved betaling. Levering i Danmark  Estimeret leveringstid: 1-2 hverdage* \n Køb under 650 kr.: Fra 19,00 kr.\n Køb over 650 kr.: Gratis* \n\n *Gælder ikke for ordrer med møbler og/eller høj volume. \n\n Afhent i butik \n Afhent i butik er en service til dig der ønsker at afhente din webordre i vores Boutique og Showroom i København.',
+    price: 449,
   },
 ];
 

@@ -1,17 +1,16 @@
 import { Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeAge, changeName } from '../store/userSlice';
-import { addCount, changeOrder, removeCount, removeItem } from '../store';
+// import { changeAge, changeName } from '../store/userSlice';
+import { addCount, changeOrder, removeCount, removeItem, addNewItem } from '../store';
 
 const Cart = (props) => {
   let state = useSelector((state) => {
     return state;
   });
   let dispatch = useDispatch();
-
   return (
     <div className='container'>
-      <span style={{ textAlign: 'center' }}>
+      {/* <span style={{ textAlign: 'center' }}>
         {state.user.name}'s(age:{state.user.age}) {state.cart.count} Cart
       </span>
 
@@ -30,7 +29,7 @@ const Cart = (props) => {
         }}
       >
         나이변경
-      </button>
+      </button> */}
 
       <Table>
         <thead>
@@ -86,6 +85,15 @@ const Cart = (props) => {
               return null;
             }
           })}
+        </tbody>
+        <tbody>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th> kr</th>
+            <th></th>
+          </tr>
         </tbody>
       </Table>
     </div>
